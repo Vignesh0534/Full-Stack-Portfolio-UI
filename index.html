@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vignesh Dasari | Software Engineer</title>
+    <!-- Tailwind CSS with Dark Mode Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            400: '#38bdf8', // Sky Blue
+                            500: '#6366f1', // Indigo
+                            600: '#2563eb', // Royal Blue (Light mode accent)
+                            900: '#0f172a'  // Deep Space Dark Blue
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth transitions for theme switching */
+        * { transition: background-color 0.3s ease, border-color 0.3s ease, text-color 0.3s ease; }
+        .dark .text-glow { text-shadow: 0 0 40px rgba(99, 102, 241, 0.4); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-brand-900 dark:text-slate-300 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- FLOATING THEME TOGGLE SWITCH -->
+    <button id="themeToggle" class="fixed top-6 right-6 z-50 p-3 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-slate-700 shadow-xl text-slate-800 dark:text-yellow-400 hover:scale-110 active:scale-95 transition cursor-pointer" aria-label="Toggle Theme">
+        <!-- Sun Icon (Visible in Dark Mode) -->
+        <svg id="sunIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 7a5 5 0 100 10 5 5 0 000-10z"></path>
+        </svg>
+        <!-- Moon Icon (Visible in Light Mode) -->
+        <svg id="moonIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+    </button>
+
+    <!-- 1. HERO SECTION -->
+    <header class="min-h-[75vh] flex flex-col justify-center items-center text-center px-6 relative overflow-hidden border-b border-slate-200 dark:border-transparent">
+        <!-- Light Mode Grid Blueprint Layer -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMGgyMHYyMEgwem0xIDFoMTh2MThIMXoiIGZpbGw9IiNlN2U1ZTQiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==')] opacity-40 dark:opacity-0 pointer-events-none -z-10 transition-opacity duration-300"></div>
+        <!-- Dark Mode Glowing Radial Nebula Layer -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/20 rounded-full blur-[120px] opacity-0 dark:opacity-100 pointer-events-none -z-10 transition-opacity duration-300"></div>
+        
+        <div class="space-y-4 max-w-3xl">
+            <p class="text-brand-600 dark:text-brand-400 font-mono tracking-widest text-sm uppercase font-bold dark:font-semibold">Hello, World. I am</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-brand-400 dark:to-indigo-400 text-glow pb-2">
+                Vignesh Dasari
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mt-4">
+                Computer Science Graduate from NIT Srinagar specializing in <strong class="text-slate-900 dark:text-white">Full-Stack Web Development</strong> and <strong class="text-slate-900 dark:text-white">Machine Learning</strong> scalable systems.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 mt-10">
+            <a href="https://github.com/Vignesh0534" target="_blank" class="flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-800 dark:hover:bg-slate-700 font-medium transition duration-300 border border-transparent dark:border-slate-700 shadow-lg">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/dasarivignesh" target="_blank" class="flex items-center gap-2 px-6 py-3 rounded-full bg-brand-600 hover:bg-indigo-600 text-white font-medium transition duration-300 shadow-lg shadow-blue-500/20 dark:shadow-indigo-500/25">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="mailto:vigneshdasari1729@gmail.com" class="flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-slate-100 text-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white font-medium transition duration-300 border border-slate-200 dark:border-slate-700 shadow-md">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                Email Me
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. CORE SKILLS -->
+    <section class="max-w-5xl mx-auto px-6 py-12 border-t border-slate-200 dark:border-slate-800/50">
+        <h2 class="text-sm font-mono text-slate-400 dark:text-slate-500 tracking-widest uppercase text-center mb-8">Technical Arsenal</h2>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+            <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-sm dark:bg-slate-800/50 dark:border-slate-700 dark:text-slate-200 dark:shadow-none font-medium">React.js</span>
+            <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-sm dark:bg-slate-800/50 dark:border-slate-700 dark:text-slate-200 dark:shadow-none font-medium">Node.js & Express</span>
+            <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-sm dark:bg-slate-800/50 dark:border-slate-700 dark:text-slate-200 dark:shadow-none font-medium">Python</span>
+            <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-sm dark:bg-slate-800/50 dark:border-slate-700 dark:text-slate-200 dark:shadow-none font-medium">JavaScript</span>
+            <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-sm dark:bg-slate-800/50 dark:border-slate-700 dark:text-slate-200 dark:shadow-none font-medium">MongoDB & SQL</span>
+            <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-sm dark:bg-slate-800/50 dark:border-slate-700 dark:text-slate-200 dark:shadow-none font-medium">TensorFlow & Keras</span>
+        </div>
+    </section>
+
+    <!-- 3. EXPERIENCE & TIMELINE -->
+    <section class="max-w-4xl mx-auto px-6 py-20 border-t border-slate-200 dark:border-slate-800/50">
+        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-10 flex items-center gap-3">
+            <span class="h-8 w-1.5 bg-brand-600 dark:bg-brand-400 rounded-full"></span> Journey & Experience
+        </h2>
+        
+        <div class="border-l-2 border-slate-200 dark:border-brand-500/30 pl-8 space-y-12 relative ml-3 md:ml-6">
+            
+            <!-- Internship -->
+            <div class="relative group">
+                <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-white dark:bg-brand-900 border-4 border-brand-600 dark:border-2 dark:border-brand-400 dark:shadow-[0_0_10px_rgba(56,189,248,0.6)] group-hover:scale-125 transition-all duration-300"></span>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Machine Learning Intern</h3>
+                <p class="text-brand-600 dark:text-brand-400 font-mono text-sm my-1">Pieinfocomm | Jan 2023 - Apr 2023</p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed max-w-2xl">Worked on a real-time machine learning use case focusing on loan prediction. Handled end-to-end data preprocessing, model training, and evaluation pipelines using Python. Tracked workflow and experiments via GitHub and Jupyter.</p>
+            </div>
+
+            <!-- Education -->
+            <div class="relative group">
+                <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-white dark:bg-brand-900 border-4 border-slate-400 dark:border-2 dark:border-indigo-400 dark:shadow-[0_0_10px_rgba(99,102,241,0.6)] group-hover:scale-125 transition-all duration-300"></span>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">B.Tech in Computer Science Engineering</h3>
+                <p class="text-slate-500 dark:text-brand-400 font-mono text-sm my-1">NIT Srinagar | CGPA: 6.1</p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed max-w-2xl">Built a strong foundation in data structures, algorithms, and modern software development practices while collaborating on real-world engineering projects.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. PROJECT SHOWCASE -->
+    <section class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-200 dark:border-slate-800/50">
+        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-10 flex items-center gap-3">
+            <span class="h-8 w-1.5 bg-brand-600 dark:bg-indigo-400 rounded-full"></span> Featured Engineering
+        </h2>
+        <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Projects dynamically injected with responsive theme-aware classes -->
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-200 dark:border-slate-800/50 font-mono bg-white dark:bg-transparent">
+        <p>Engineered by Vignesh Dasari &copy; <script>document.write(new Date().getFullYear())</script></p>
+    </footer>
+
+    <!-- INTERACTION LOGIC (THEME CONTROL & INJECTION) -->
+    <script>
+        // 1. DATA ACCESS LAYER
+        const projects = [
+            {
+                title: "Student Management Web App",
+                type: "Full-Stack Development",
+                tech: ["React.js", "Node.js", "Express", "MongoDB"],
+                points: [
+                    "Created a full-stack application handling student profiles, academic performance, and secure course enrollments.",
+                    "Implemented RESTful APIs and secured the system using JSON Web Token (JWT) authentication.",
+                    "Engineered role-based access control (RBAC) enabling explicit CRUD capabilities for Student and Admin routes."
+                ]
+            },
+            {
+                title: "Music Genre Classifier",
+                type: "Machine Learning",
+                tech: ["Python", "TensorFlow", "KNN", "Librosa"],
+                points: [
+                    "Engineered an acoustic machine learning classification model utilizing the K-Nearest Neighbors (KNN) algorithm.",
+                    "Extracted advanced audio features (MFCCs) from raw wave data using the Librosa library for precise training.",
+                    "Optimized predictive accuracy via rigorous feature scaling, hyperparameter tuning, and cross-validation matrix evaluation."
+                ]
+            },
+            {
+                title: "Loan Prediction Engine",
+                type: "Data Science Intern",
+                tech: ["Python", "Pandas", "Scikit-Learn", "Jupyter"],
+                points: [
+                    "Spearheaded a real-time predictive machine learning pipeline evaluating complex loan approval probabilities.",
+                    "Executed extensive data preprocessing, structural balancing, and missing-value imputation on financial datasets.",
+                    "Tracked model lifecycle, training configurations, and experimental iterations using GitHub."
+                ]
+            }
+        ];
+
+        // 2. RENDERING ARCHITECTURE
+        function renderProjects() {
+            const grid = document.getElementById('projectGrid');
+            const html = projects.map(proj => {
+                const tags = proj.tech.map(t => `
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-600 border border-slate-200 dark:bg-slate-800/80 dark:text-brand-400 dark:border-slate-700/50 text-[11px] font-mono font-medium dark:font-normal">
+                        ${t}
+                    </span>
+                `).join('');
+                
+                const bullets = proj.points.map(p => `
+                    <li class="flex items-start gap-2">
+                        <span class="text-brand-600 dark:text-indigo-400 mt-1 font-bold">▹</span>
+                        <span class="leading-relaxed">${p}</span>
+                    </li>
+                `).join('');
+
+                return `
+                    <div class="bg-white border border-slate-200 shadow-sm dark:bg-slate-900/30 dark:backdrop-blur-md dark:border-white/5 hover:shadow-lg dark:hover:border-indigo-500/30 hover:-translate-y-2 transition-all duration-300 group flex flex-col h-full rounded-2xl p-6">
+                        <p class="text-brand-600 dark:text-brand-400 font-mono text-xs uppercase tracking-wider mb-2 font-bold dark:font-semibold">${proj.type}</p>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">${proj.title}</h3>
+                        <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-3 mb-6 flex-1">${bullets}</ul>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-100 dark:border-slate-800/50">${tags}</div>
+                    </div>
+                `;
+            }).join('');
+            grid.innerHTML = html;
+        }
+
+        // 3. THEME MANAGEMENT SYSTEM
+        const toggleBtn = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        // Establish Blue Mode (dark) as default state if nothing is cached
+        if (!localStorage.getItem('theme')) {
+            localStorage.setItem('theme', 'dark');
+        }
+
+        function applyTheme() {
+            if (localStorage.getItem('theme') === 'dark') {
+                htmlElement.classList.add('dark');
+                document.getElementById('sunIcon').classList.remove('hidden');
+                document.getElementById('moonIcon').classList.add('hidden');
+            } else {
+                htmlElement.classList.remove('dark');
+                document.getElementById('sunIcon').classList.add('hidden');
+                document.getElementById('moonIcon').classList.remove('hidden');
+            }
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+            applyTheme();
+        });
+
+        // Initialize view layers
+        document.addEventListener('DOMContentLoaded', () => {
+            applyTheme();
+            renderProjects();
+        });
+    </script>
+</body>
+</html>
